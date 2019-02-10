@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-builder",
+  "version": "1.0.0",
+  "description": "A CLI Tool to build an HTML portfolio page",
+  "main": "./bin/main.js",
+  "scripts": {
+    "start": "node ./bin/main.js",
+    "test": "node ./bin/main.js ProjectList.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajshiff/portfolio-builder.git"
+  },
+  "keywords": [
+    "portfolio",
+    "builder",
+    "node",
+    "tool",
+    "cli"
+  ],
+  "author": "Aaron Shiffler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajshiff/portfolio-builder/issues"
+  },
+  "homepage": "https://github.com/ajshiff/portfolio-builder#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "moment": "^2.24.0"
+  }
+}
