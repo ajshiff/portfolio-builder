@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Example Project Name",
+        "hours": 100,
+        "time": "February 2019 - March 2019",
+        "link": "https://github.com/ajshiff/portfolio-builder",
+        "description": "The main content description of your project goes here.",
+        "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
+        "imgAlt": "Alt Text for your Image",
+        "skills": [
+            "NodeJS",
+            "ES6"
+        ]
+    }
+]
