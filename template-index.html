@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Aaron Shiffler's Portfolio">
+  <meta name="keywords" content="portfolio, web development, node, c#, c++, cpp">
+  <meta name="author" content="Aaron Shiffler">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./portfolioBuilder.css">
+  <style type="text/css">
+  /* START GENERAL STYLES + Styles Less than 600 PX */
+    .portfolioBuilder {
+      color: #333;
+      font-family: Lato, Arial, Helvetica, sans-serif;
+      margin: auto;
+      margin-top: 10px;
+      width: 85%;
+    }
+
+    .portfolioBuilder a {
+      text-decoration: none;
+      color: #333399
+    }
+    .portfolioBuilder a:hover {
+      color: blue;
+    }
+    .portfolioBuilder a:active {
+      color: blue;
+    }
+
+    .portfolioBuilder .centerContent * {
+      text-align: center;
+    }
+    .portfolioBuilder .myName {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .portfolioBuilder .profilePictureDiv {
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      display: block;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .portfolioBuilder .profilePictureDiv .profilePicture {
+      height: 150px;
+      max-width: auto;
+    }
+
+    .portfolioBuilder .photoDiv {
+      height: 200px;
+      width: 200px;
+      overflow: hidden;
+      display: block;
+      margin: 0 auto;
+      padding-bottom: 10px;
+    }
+
+    .portfolioBuilder .photoDiv img{
+      height: 200px;
+      width: auto;
+    }
+
+    .portfolioBuilder .pName {
+      font-size: 1.5em;
+      font-weight: bold;
+      display: inline;
+    }
+
+    .portfolioBuilder .pSkill {
+      font-size: 0.75em;
+      text-align: center;
+      color: #5b5b5b;
+      font-weight:bolder;
+      height: 30px;
+      min-width: 30px;
+      background-color: #e8e8e8;
+      padding: 5px;
+      border-radius: 10px;
+      display: inline-flex;
+      justify-content: left;
+      align-items: center;
+    }
+    /* END GENERAL STYLES + Styles Less than 600 PX */
+    /* START MEDIA QUERY 600-900 PX */
+    @media (min-width: 600px) {
+      .portfolioBuilder {
+        width: 500px;
+      /* Images Stack */
+      }
+    }
+    /* END MEDIA QUERY 600-900 PX */
+    /* START MEDIA QUERY 900-1200 PX */
+    @media (min-width: 900px) {
+      .portfolioBuilder {
+        width: 800px;
+      }
+    /* Images On Left */
+    }
+    /* END MEDIA QUERY 900-1200 PX */
+    /* START MEDIA QUERY 1200+ PX */
+    @media (min-width: 1200px) {
+      .portfolioBuilder {
+        width: 1100px;
+      }
+    }
+    /* END MEDIA QUERY 1200+ PX */
+  </style>
+</head>
+<!-- START BODY -->
+<body class="portfolioBuilder">
+  <!-- START INTRO DIV -->
+  <div id="intro" class="centerContent">
+    <div class="profilePictureDiv">
+      <img class="profilePicture" src="https://avatars0.githubusercontent.com/u/38662528?s=400&u=8b05b6ccccaad5b0bcb9be2bada7fefb637a1cfe&v=4"/>
+    </div>
+    <h2 class="myName">Aaron Shiffler</h2>
+    <p class="myTag">@ajshiff</p>
+    <div><a href="https://github.com/ajshiff">GitHub</a>&nbsp;<a href="https://github.com/ajshiff">NPM</a></div>
+    <hr>
+  </div>
+  <!-- END INTRO DIV -->
+  <!-- START PROJECTS DIV -->
+  <div id="projects">
+    <div class="project">
+      <div class="photoDiv">
+        <a class="pLink" href="https://ajshiff.github.io/">
+          <img class="pPhoto" src="https://images.pexels.com/photos/1305360/pexels-photo-1305360.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="HiltCoW">
+        </a>
+      </div>
+      <div class="projectHeader">
+        <a class="pLink" href="https://ajshiff.github.io/">
+          <div class="pName">Portfolio Builder</div>
+        </a><br>
+        <span class="pHours">20 hours</span>,&nbsp;
+        <span class="pTimeframe">February 2019</span>
+      </div>
+      <div class="projectBody">
+        <p class="pDescription">
+            This project was built to generate this webpage. I am able to configure a JSON with an array of objects containing details of the projects I've worked on in the past, then let the program generate an HTML page for me highlighting those projects. I didn't want it to be a one-run-n-done, so I built it to be a command line node program, that anyone can use as long as they configure their ProjectData.json file.
+        </p>
+      </div>
+      <div class="projectSkills">
+        <div class="pSkill">NodeJs</div>
+        <div class="pSkill">HTML</div>
+        <div class="pSkill">CSS</div>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <!-- END PROJECTS DIV -->
+  <!-- START END DIV -->
+  <div id="end"></div>
+  <!-- END END DIV -->
+</body>
+<!-- END BODY -->
+<footer>
+</footer>
