@@ -4,7 +4,7 @@
 
 - [Download Instructions](#Download)
 - [Usage Instructions](#Usage)
-- [Example PortfolioData.json File](#Example%20PortfolioFile.json)
+- [Example PortfolioData.json File](#Example%20ProjectData.json)
 - [Tips and Gotchas](#Tips%20and%20Gotchas)
 
 -----
@@ -39,7 +39,7 @@ Use the HTML File however you'd like!
 
 -----
 
-## Example PortfolioFile.json
+## Example ProjectData.json
 ```
 [
     {
@@ -70,9 +70,9 @@ Use the HTML File however you'd like!
 
 - The required css stylings are included in your head tag, 
 
-#### The PortfolioFile.json
+#### The ProjectData.json
 
-- Make sure your `PortfolioFile.json` is an array of objects.
+- Make sure your `ProjectData.json` is an array of objects.
 
 - None of the keys on the object are required, but including all of the keys from the example are recommended.
 
