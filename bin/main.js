@@ -2,6 +2,7 @@
 const getInput = require('../getInput.js');
 const generateHtml = require('../generateHtml.js')
 const getOutput = require('../getOutput.js');
+const chalk = require('chalk');
 
 function main (projectListFile, outputDetails) {
     const projectList = getInput(projectListFile);
@@ -9,4 +10,9 @@ function main (projectListFile, outputDetails) {
     getOutput(html, outputDetails);
 }
 
-main(process.argv[2], process.argv[3]);
+try {
+    main(process.argv[2], process.argv[3]);
+} catch (e) {
+    e.message = chalk.red(e.message)
+    console.error(e);
+}

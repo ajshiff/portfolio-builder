@@ -45,8 +45,8 @@ Use the HTML File however you'd like!
     {
         "name": "Example Project Name",
         "hours": 100,
-        "time": "February 2019 - March 2019",
         "link": "https://github.com/ajshiff/portfolio-builder",
+        "timeframe": "February 2019 - March 2019",
         "description": "The main content description of your project goes here.",
         "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
         "imgAlt": "Alt Text for your Image",
@@ -75,6 +75,8 @@ Use the HTML File however you'd like!
 - Make sure your `PortfolioFile.json` is an array of objects.
 
 - None of the keys on the object are required, but including all of the keys from the example are recommended.
+
+- If you wish to explicitly define a key, but leave it empty, assign it a litteral `null` value. If you use an empty string (`""`), that empty string will be treated as a normal string, as if you intended it to show up in your portfolio page.
 
 - The `skills` property must be an array, or else your value will appear as one skill.
 
