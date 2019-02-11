@@ -1,6 +1,5 @@
 const path = require('path');
 
-
 /***********************************************************
  * Verifies the input is valid, then sanitizes it to ensure
  * the data on their input will work for the whole program.
@@ -9,7 +8,8 @@ function getInput (portfolioJsonLocation) {
     if (!portfolioJsonLocation)
         portfolioJsonLocation = 'PortfolioBuilder.json';
     let rawInput = verifyInput(portfolioJsonLocation);
-    let sanitizedInput = sanitizeInput(rawInput);
+    let sanitizedInput = rawInput.map( input => sanitizeInput(input));
+    Object.freeze(sanitizedInput);
     return sanitizedInput;
 }
 
@@ -22,7 +22,7 @@ function verifyInput(portfolioJsonLocation) {
     let baseInput;
     portfolioJsonLocation = path.resolve(portfolioJsonLocation);
     if (path.extname(portfolioJsonLocation) !== '.json'){
-        throw new Error(chalk.red('You must specify a .json file as your first command line argument.'))
+        throw new Error('You must specify a .json file as your first command line argument.')
     }
     baseInput = require(portfolioJsonLocation);
     return baseInput
@@ -50,7 +50,10 @@ function sanitizeInput (rawInput) {
     return sanitizedInput;
 
     /******************************************************
-    * 
+    * Keep keys on the source object, if those keys exist
+    * on the template object. If keys don't exist on the
+    * template object, create them on the source, and
+    * initialize their value to null.
     *******************************************************/
     function deleteUnusedKeys (verifyInput, rawInput) {
         return Object.keys(verifyInput).reduce( (acc, key) => {
@@ -63,11 +66,14 @@ function sanitizeInput (rawInput) {
     }
     
     /******************************************************
-    * 
+    * This is the place to make sure each key is of the
+    * correct type. As of right now, the only one that
+    * matters that it is of the correct type is the skills
+    * property. It needs to be an array for later. So check
+    * for that, and fix it if needed.
     *******************************************************/
     function typifyInput (verifyInput, sanitizedInput) {
-        // TODO decide whether or not to push null into the array, or leave array empty. 
-        if (!Array.isArray(sanitizedInput.skills)){
+        if (!Array.isArray(sanitizedInput.skills)) {
             if (sanitizedInput.skills === null)
                 sanitizedInput.skills = [];
             sanitizedInput.skills = [].concat(sanitizedInput.skills);
