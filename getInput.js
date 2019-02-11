@@ -4,10 +4,8 @@ const path = require('path');
  * Verifies the input is valid, then sanitizes it to ensure
  * the data on their input will work for the whole program.
  ***********************************************************/
-function getInput (portfolioJsonLocation) {
-    if (!portfolioJsonLocation)
-        portfolioJsonLocation = 'PortfolioBuilder.json';
-    let rawInput = verifyInput(portfolioJsonLocation);
+function getInput (projectsJsonLocation) {
+    let rawInput = verifyInput(projectsJsonLocation);
     let sanitizedInput = rawInput.map( input => sanitizeInput(input));
     Object.freeze(sanitizedInput);
     return sanitizedInput;
@@ -18,13 +16,18 @@ function getInput (portfolioJsonLocation) {
  * (as determined by Node's window.require() method ),
  * return a parsed version of their input file. Else, throw.
  ***********************************************************/
-function verifyInput(portfolioJsonLocation) {
+function verifyInput(projectsJsonLocation) {
     let baseInput;
-    portfolioJsonLocation = path.resolve(portfolioJsonLocation);
-    if (path.extname(portfolioJsonLocation) !== '.json'){
+    if (!projectsJsonLocation) {
+        let fs = require('fs');
+        let dirItems = fs.readdirSync('./');
+        projectsJsonLocation = dirItems.filter(item => item.toLocaleLowerCase() === 'projectdata.json')[0];
+    }
+    projectsJsonLocation = path.resolve(projectsJsonLocation);
+    if (path.extname(projectsJsonLocation) !== '.json'){
         throw new Error('You must specify a .json file as your first command line argument.')
     }
-    baseInput = require(portfolioJsonLocation);
+    baseInput = require(projectsJsonLocation);
     return baseInput
 
 }
