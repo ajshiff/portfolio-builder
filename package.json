@@ -5,7 +5,7 @@
   "main": "./bin/main.js",
   "scripts": {
     "start": "node ./bin/main.js",
-    "test": "node ./bin/main.js ProjectList.json"
+    "test": "node ./bin/main.js ProjectData.json"
   },
   "repository": {
     "type": "git",
