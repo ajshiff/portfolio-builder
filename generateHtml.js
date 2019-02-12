@@ -1,9 +1,12 @@
 const cheerio = require('cheerio');
+const fs = require('fs');
 
 function generateHtml (projectList) {
-    let htmlDocTemplate = '';
+    // TODO make a more dynamic input for htmlTemplate file.
+    let htmlTemplate = fs.readFileSync('./template-index.html'); 
+    let $ = cheerio.load(htmlTemplate);
     let htmlProjectSnippits = projectList.map(generateHtmlSnippits);
-    let htmlDoc = htmlProjectSnippits.reduce(addHtmlSnippits, htmlDocTemplate);
+    let htmlDoc = htmlProjectSnippits.reduce(addHtmlSnippits, $);
     return htmlDoc;
 }
  
@@ -11,8 +14,9 @@ function generateHtmlSnippits (project) {
     return project;
 }
 
-function addHtmlSnippits (htmlDoc, projectSnippit) {
-    return htmlDoc;
+function addHtmlSnippits ($, projectSnippit) {
+    let projectsDiv = $('.portfolioBuilder #projects').first();
+    return $;
 }
 
 
