@@ -13,16 +13,17 @@
 
 Install the file globally. This is a command line utility.
 
-`npm install -g portfolio-builder`
+`npm i -g portfolio-builder`
 ##### [Back To Table of Contents](#Table%20of%20Contents)
 
 -----
 
 ## Usage
 
-Portfolio Builder takes two arguments.
+Portfolio Builder takes three optional arguments.
 1. A portfolioBuilder.json data file
-1. An output file name.
+1. An output file location
+1. A template html file
 
 Run the following command in the command line:
 
