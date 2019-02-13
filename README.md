@@ -26,13 +26,18 @@ Portfolio Builder takes two arguments.
 
 Run the following command in the command line:
 
-`portfolioBuilder P/A/T/H/TO/PortfolioBuilder.json OutputName.html`
+`portfolioBuilder P/A/T/H/TO/PortfolioBuilder.json Output/Location/my.html PATH/TO/Template/HTML/file.html`
 
 **NOTES:**
 
-If No Path is specified to the portfolioBuilder.json file, the current directory will be checked for a case-insensitive `PortfolioBuilder.json` file. 
+**CLI Argument 1:**\
+If no path is specified to the portfolioBuilder.json file, the current directory will be checked for a case-insensitive `PortfolioBuilder.json` file. This functionality can also be used by default by typing `null` where this argument should be.
 
-If no output name is provided for the name of the html file that will be produced, the file that is produced will be called `:timestamp:-index.html`. For example: `20190210_1515_2104-index.html`. It follows the format of `YYYYMMDD_kkmm_ssSS-index.html`.
+**CLI Argument 2:**\
+If no output name is provided for the name of the html file that will be produced, the file that is produced will be called `:timestamp:-index.html`. For example: `20190210_1515_2104-index.html`. It follows the format of `YYYYMMDD_kkmm_ssSS-index.html`. This functionality can also be used by default by typing `null` where this argument should be.
+
+**CLI Argument 3:**\
+If no path is specified to a template html file, a stock template will be used by default. This functionality can also be used by default by typing `null` where this argument should be. See [Tips and Gotchas](#Tips%20and%20Gotchas) for more information.
 
 Use the HTML File however you'd like!
 ##### [Back To Table of Contents](#Table%20of%20Contents)
@@ -63,6 +68,26 @@ Use the HTML File however you'd like!
 -----
 
 ## Tips and Gotchas
+
+#### Creating Your Own Template HTMLs
+
+- If you use your own template, generate a default template, then copy and paste the css styling code from that page into a `portfolioBuilder.css` file, and link it somewhere in your template-page header tag. 
+
+- CSS defined in the template only effects items that are children of `class="portfolioBuilder"` elements.
+
+- If you use your own html template file, it must have a `class="projects"` element inside of a `class="portfolioBuilder"` element. See code blocks below for example. The Project items generated will be appended to whatever is already inside of your projects div.
+
+*Invalid Example*
+```
+<div class="portfolioBuilder projects"></div>
+```
+*Valid Example*
+```
+<div class="portfolioBuilder">
+    <div class="projects"></div>
+</div>
+```
+
 
 #### The Output HTML File
 
