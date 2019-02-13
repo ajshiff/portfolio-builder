@@ -1,5 +1,7 @@
+const fs = require('fs');
 
-function getOutputs (html, outputDetails) {
+function getOutputs (html, outputLocation) {
+    fs.writeFileSync(outputLocation, html);
     return;
 }
 
