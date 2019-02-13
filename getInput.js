@@ -130,7 +130,7 @@ function sanitizeOutputLocationInput (outputLocation) {
 function sanitizeHtmlTemplateLocation (htmlTemplateLocation) {
     let pathExt = path.extname(htmlTemplateLocation || '');
     if (!htmlTemplateLocation || htmlTemplateLocation === 'null')
-        htmlTemplateLocation = path.resolve(`./template-index.html`);
+        htmlTemplateLocation = path.resolve(__dirname, 'template-index.html');
     else if (pathExt !== '.html')
         throw new Error(`Your html template, ${htmlTemplateLocation} , must have a ".html" extention.`);
     htmlTemplateLocation = path.resolve(htmlTemplateLocation);
