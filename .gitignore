@@ -1,3 +1,6 @@
+#My Ignores
+outputs
+
 # Logs
 logs
 *.log

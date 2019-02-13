@@ -6,9 +6,9 @@ const makeProjectHtml = require('./makeProjectHtml.js');
 /***********************************************************
  * 
  ***********************************************************/
-function generateHtml (projectList, indexHtmlTemplate = './template-index.html') {
-    indexHtmlTemplate = fs.readFileSync(indexHtmlTemplate);
-    let $ = cheerio.load(indexHtmlTemplate);
+function generateHtml (projectList, htmlTemplateLocation) {
+    let htmlTemplate = fs.readFileSync(htmlTemplateLocation);
+    let $ = cheerio.load(htmlTemplate);
     let htmlProjectSnippits = projectList.map(generateHtmlSnippits);
     let htmlDoc = htmlProjectSnippits.reduce(addHtmlSnippits, $).html();
     return htmlDoc;

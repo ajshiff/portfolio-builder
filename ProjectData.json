@@ -5,7 +5,7 @@
         "link": "https://github.com/ajshiff/portfolio-builder",
         "timeframe": "February 2019 - March 2019",
         "description": "The main content description of your project goes here.",
-        "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
+        "imgSrc": "https://images.pexels.com/photos/50711/board-electronics-computer-data-processing-50711.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "imgAlt": "Alt Text for your Image",
         "skills": [
             "NodeJS",
@@ -18,11 +18,18 @@
         "link": "https://github.com/sbolande",
         "timeframe": "May 2055",
         "description": "A super-duper awesome project thing!",
-        "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
+        "imgSrc": "https://images.pexels.com/photos/163073/raspberry-pi-computer-linux-163073.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "imgAlt": "Alt Text for your Image",
         "skills": [
+            "C++",
             "C#",
-            "JQuery"
+            "ES6",
+            "HTML5",
+            "CSS3",
+            "JQuery",
+            "Python",
+            "F#",
+            "Python"
         ]
     },
     {
@@ -31,7 +38,7 @@
         "link": "https://github.com/benjameep/",
         "timeframe": "Rush 2112",
         "description": "The Solar Federation has assumed control... Has assumed control... has assumed control.",
-        "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
+        "imgSrc": "https://images.pexels.com/photos/327509/pexels-photo-327509.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "imgAlt": null,
         "skills": [
             "QuantumQL",
