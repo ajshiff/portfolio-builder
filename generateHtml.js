@@ -1,22 +1,24 @@
 const cheerio = require('cheerio');
-var htmlDocTemplate = require('./htmlDocTemplate.js');
+const fs = require('fs');
 
-function generateHtml(projectList) {
-    var templates = projectList.map((project) => {
-        htmlDocTemplate(project);
-    });
+function generateHtml (projectList, htmlTemplate = './template-index.html') {
+    htmlTemplate = fs.readFileSync(htmlTemplate); 
+    let $ = cheerio.load(htmlTemplate);
     let htmlProjectSnippits = projectList.map(generateHtmlSnippits);
-    let htmlDoc = htmlProjectSnippits.reduce(addHtmlSnippits, htmlDocTemplate);
+    let htmlDoc = htmlProjectSnippits.reduce(addHtmlSnippits, $).html();
+    console.log(htmlDoc)
     return htmlDoc;
 }
 
-// 
-function generateHtmlSnippits(project) {
+function generateHtmlSnippits (project) {
+    project = `\n<span>This Project is called ${project.name}</span>`;
     return project;
 }
 
-function addHtmlSnippits(htmlDoc, projectSnippit) {
-    return htmlDoc;
+function addHtmlSnippits ($, projectSnippit) {
+    let projectsDiv = $('.portfolioBuilder #projects').first();
+    projectsDiv.append(projectSnippit);
+    return $;
 }
 
 

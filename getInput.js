@@ -63,9 +63,9 @@ function sanitizeInput (rawInput) {
             if (key in rawInput)
                 acc[key] = rawInput[key];
             else 
-                acc[key] = null;
+            acc[key] = null;
             return acc;
-        });
+        }, {});
     }
     
     /******************************************************

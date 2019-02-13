@@ -11,5 +11,31 @@
             "NodeJS",
             "ES6"
         ]
+    },
+    {
+        "name": "Second Project",
+        "hours": 200,
+        "link": "https://github.com/sbolande",
+        "timeframe": "May 2055",
+        "description": "A super-duper awesome project thing!",
+        "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
+        "imgAlt": "Alt Text for your Image",
+        "skills": [
+            "C#",
+            "JQuery"
+        ]
+    },
+    {
+        "name": "A cool example thing",
+        "hours": 300,
+        "link": "https://github.com/benjameep/",
+        "timeframe": "Rush 2112",
+        "description": "The Solar Federation has assumed control... Has assumed control... has assumed control.",
+        "imgSrc": "./PATH/To/Image/Asset/You/Want/To/Reference.png",
+        "imgAlt": null,
+        "skills": [
+            "QuantumQL",
+            "Future"
+        ]
     }
 ]
