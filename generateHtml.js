@@ -1,9 +1,10 @@
 const cheerio = require('cheerio');
 const fs = require('fs');
+const makeProjectHtml = require('./makeProjectHtml.js');
 
-function generateHtml (projectList, htmlTemplate = './template-index.html') {
-    htmlTemplate = fs.readFileSync(htmlTemplate); 
-    let $ = cheerio.load(htmlTemplate);
+function generateHtml (projectList, indexHtmlTemplate = './template-index.html') {
+    indexHtmlTemplate = fs.readFileSync(indexHtmlTemplate);
+    let $ = cheerio.load(indexHtmlTemplate);
     let htmlProjectSnippits = projectList.map(generateHtmlSnippits);
     let htmlDoc = htmlProjectSnippits.reduce(addHtmlSnippits, $).html();
     console.log(htmlDoc)
@@ -11,8 +12,7 @@ function generateHtml (projectList, htmlTemplate = './template-index.html') {
 }
 
 function generateHtmlSnippits (project) {
-    project = `\n<span>This Project is called ${project.name}</span>`;
-    return project;
+    return makeProjectHtml(project);
 }
 
 function addHtmlSnippits ($, projectSnippit) {
