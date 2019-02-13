@@ -13,7 +13,7 @@
 
 Install the file globally. This is a command line utility.
 
-`npm install -g git+https://github.com/ajshiff/portfolio-builder.git`
+`npm install -g portfolio-builder`
 ##### [Back To Table of Contents](#Table%20of%20Contents)
 
 -----
