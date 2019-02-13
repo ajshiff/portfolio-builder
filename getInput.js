@@ -31,7 +31,7 @@ function verifyJsonInput(projectsJsonLocation) {
     if (!projectsJsonLocation || projectsJsonLocation === 'null') {
         let dirItems = fs.readdirSync('./');
         projectsJsonMatches = dirItems.filter(item => item.toLowerCase() === 'projectdata.json');
-        if (projectsJsonLocation.length === 0)
+        if (projectsJsonMatches.length === 0)
             throw new Error('Couldn\'t find a ProjectData.json file in your working directory');
         projectsJsonLocation = path.resolve(projectsJsonMatches[0]);
     }
