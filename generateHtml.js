@@ -9,7 +9,7 @@ function generateHtml (projectList, htmlTemplate = './template-index.html') {
     console.log(htmlDoc)
     return htmlDoc;
 }
- 
+
 function generateHtmlSnippits (project) {
     project = `\n<span>This Project is called ${project.name}</span>`;
     return project;
