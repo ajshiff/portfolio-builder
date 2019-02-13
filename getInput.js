@@ -148,7 +148,7 @@ function sanitizeHtmlTemplateLocation (htmlTemplateLocation) {
 function verifyValidHtmlTemplate (htmlTemplateLocation) {
     let htmlTemplate = fs.readFileSync(htmlTemplateLocation);
     let $ = cheerio.load(htmlTemplate);
-    let vitalElement = $('.portfolioBuilder #projects');
+    let vitalElement = $('.portfolioBuilder .projects');
     if (vitalElement.length === 0)
         throw new Error(`Your template html file, ${htmlTemplateLocation}, must contain a 'id="projects"' inside of a 'class="portfolioBuilder"' somewhere.`);
     return;

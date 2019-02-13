@@ -25,7 +25,7 @@ function generateHtmlSnippits (project) {
  * 
  ***********************************************************/
 function addHtmlSnippits ($, projectSnippit) {
-    let projectsDiv = $('.portfolioBuilder #projects').first();
+    let projectsDiv = $('.portfolioBuilder .projects').first();
     projectsDiv.append(projectSnippit);
     return $;
 }
