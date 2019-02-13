@@ -1,14 +1,20 @@
+const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 
 /***********************************************************
  * Verifies the input is valid, then sanitizes it to ensure
  * the data on their input will work for the whole program.
  ***********************************************************/
-function getInput (projectsJsonLocation) {
-    let rawInput = verifyInput(projectsJsonLocation);
-    let sanitizedInput = rawInput.map( input => sanitizeInput(input));
+function getInput (projectsJsonLocation, outputLocation) {
+    let rawInput = verifyJsonInput(projectsJsonLocation);
+    let sanitizedInput = rawInput.map( input => sanitizeProjectList(input));
     Object.freeze(sanitizedInput);
-    return sanitizedInput;
+    outputLocation = sanitizeOutputLocationInput(outputLocation);
+    return {
+        projectList: sanitizedInput,
+        outputLocation: outputLocation
+    }
 }
 
 /***********************************************************
@@ -16,7 +22,7 @@ function getInput (projectsJsonLocation) {
  * (as determined by Node's window.require() method ),
  * return a parsed version of their input file. Else, throw.
  ***********************************************************/
-function verifyInput(projectsJsonLocation) {
+function verifyJsonInput(projectsJsonLocation) {
     let baseInput;
     if (!projectsJsonLocation) {
         let fs = require('fs');
@@ -36,7 +42,7 @@ function verifyInput(projectsJsonLocation) {
  * Delete unused keys, and make sure properties on the array
  * are valid types.
  ***********************************************************/
-function sanitizeInput (rawInput) {
+function sanitizeProjectList (rawInput) {
     let sanitizedInput;
     let verifyInput = {
         name: '',
@@ -83,6 +89,29 @@ function sanitizeInput (rawInput) {
         }
         return sanitizedInput;
     }
+}
+
+/***********************************************************
+ * - If no parameter was passed, set default name.
+ * - else if parameter had no extension, assume it was a 
+ *   directory, and join the default file name.
+ * - else if the file extension name was not .html, throw.
+ * - Also, if the container dir doesn't exist, throw.
+ * - return sanitized outputLocation.
+ ***********************************************************/
+function sanitizeOutputLocationInput (outputLocation) {
+    let defaultName = `${moment().format('YYYYMMDD_kkmm_ssSS')}-index.html`;
+    let pathExt = path.extname(outputLocation || '');
+    if (!outputLocation)
+        outputLocation = path.resolve(`./${defaultName}`);
+    else if (pathExt === '')
+        outputLocation = path.join(outputLocation, defaultName);
+    else if (pathExt !== '.html')
+        throw new Error('Your output location must have a ".html" extention.');
+    if (!fs.existsSync( path.dirname(outputLocation) ))
+        throw new Error('That output location does not exist. Please try again.');
+    outputLocation = path.resolve(outputLocation);
+    return outputLocation;
 }
 
 module.exports = getInput;
