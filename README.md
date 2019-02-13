@@ -35,7 +35,7 @@ Run the following command in the command line:
 If no path is specified to the portfolioBuilder.json file, the current directory will be checked for a case-insensitive `PortfolioBuilder.json` file. This functionality can also be used by default by typing `null` where this argument should be.
 
 **CLI Argument 2:**\
-If no output name is provided for the name of the html file that will be produced, the file that is produced will be called `:timestamp:-index.html`. For example: `20190210_1515_2104-index.html`. It follows the format of `YYYYMMDD_kkmm_ssSS-index.html`. This functionality can also be used by default by typing `null` where this argument should be.
+If no output location is provided, the file that is produced will be created in the local directory and be called `:timestamp:-index.html`. For example: `20190210_1515_2104-index.html`. It follows the format of `YYYYMMDD_kkmm_ssSS-index.html`. This functionality can also be used by default by typing `null` where this argument should be.
 
 **CLI Argument 3:**\
 If no path is specified to a template html file, a stock template will be used by default. This functionality can also be used by default by typing `null` where this argument should be. See [Tips and Gotchas](#Tips%20and%20Gotchas) for more information.
