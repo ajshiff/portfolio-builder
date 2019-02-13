@@ -7,6 +7,9 @@
     "start": "node ./bin/main.js",
     "test": "node ./bin/main.js ProjectData.json"
   },
+  "bin": {
+    "portfolioBuilder": "./bin/main.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ajshiff/portfolio-builder.git"
