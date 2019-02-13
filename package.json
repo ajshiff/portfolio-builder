@@ -1,6 +1,6 @@
 {
   "name": "portfolio-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI Tool to build an HTML portfolio page",
   "main": "./bin/main.js",
   "scripts": {
